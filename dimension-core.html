@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimension Core - Runakiのポートフォリオ</title>
+  <meta name="description" content="Dimension Core - 戦略性の高いデッキ構築要素を取り入れた2Dローグライクゲーム">
+  
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome アイコン -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    /* プロジェクト詳細ページ用のスタイル */
+    .project-hero {
+      padding: 120px 0 60px;
+      background-color: var(--bg-secondary);
+    }
+    
+    .project-title {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    
+    .project-category {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-description {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-gray {
+      background-color: var(--bg-secondary);
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: var(--primary-color);
+    }
+    
+    .section-subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      justify-content: center;
+    }
+    
+    .feature-item {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .screenshot-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .screenshot-item img {
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .screenshot-caption {
+      display: block;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    
+    .process-timeline {
+      position: relative;
+      margin: 3rem 0;
+    }
+    
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      background-color: var(--primary-color);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      text-align: right;
+      padding-right: 50px;
+      padding-left: 0;
+      margin-left: 0;
+      width: 45%;
+    }
+    
+    .timeline-item:nth-child(even) {
+      text-align: left;
+      padding-left: 50px;
+      padding-right: 0;
+      margin-left: 55%;
+      width: 45%;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -10px;
+      left: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -10px;
+      right: auto;
+    }
+    
+    .timeline-date {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .project-title {
+        font-size: 2.5rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+      
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .process-timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        text-align: left;
+        padding-left: 80px;
+        padding-right: 0;
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 30px;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+<body style="">
+  <!-- ナビゲーションバー -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="logo">Runaki</a>
+      <div class="nav-links">
+        <a href="index.html#home" class="nav-link">ホーム</a>
+        <a href="index.html#about" class="nav-link">プロフィール</a>
+        <a href="index.html#skills" class="nav-link">スキル</a>
+        <a href="index.html#works" class="nav-link active">制作実績</a>
+        <a href="index.html#contact" class="nav-link">お問い合わせ</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main>
+    <!-- プロジェクトヒーローセクション -->
+    <section class="project-hero">
+      <div class="container">
+        <a href="index.html#works" class="btn btn-secondary" style="margin-bottom: 2rem;">
+          <i class="fas fa-arrow-left"></i> 作品一覧に戻る
+        </a>
+        <div style="text-align: center;">
+          <h1 class="project-title" title="クリックして編集" style="border-radius: 3px;">Dimension Core</h1>
+          <span class="project-category">2Dローグライクゲーム</span>
+          <p class="project-description" style="margin-left: auto; margin-right: auto; border-radius: 3px;" title="クリックして編集">
+            Dimension Coreは私が大学在学中に独学で開発した2Dローグライクゲームです。
+            プレイヤーは多様な図形を操り、戦略的なデッキ構築を通じてゲームを進めていきます。
+            シンプルながらも奥深いゲームシステムを目指し、ゲームデザインとプログラミングの両面から挑戦しています。
+          </p>
+          <div class="project-links" style="justify-content: center; margin-left: auto; margin-right: auto;">
+            <a href="https://github.com/noutetu" target="_blank" class="btn btn-primary">
+              <i class="fab fa-github"></i> GitHubで見る
+            </a>
+            <a href="#" target="_blank" class="btn btn-secondary">
+              <i class="fab fa-youtube"></i> プレイ動画を見る
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ゲーム詳細セクション -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 class="section-title" title="クリックして編集" style="border-radius: 3px;">ゲーム概要</h2>
+          <p class="section-subtitle" title="クリックして編集" style="border-radius: 3px;">Dimension Coreの特徴</p>
+        </div>
+        
+        <div class="feature-grid">
+          <div class="feature-item fade-in appear">
+            <div class="feature-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3 class="feature-title" title="クリックして編集" style="border-radius: 3px;">観察型ローグライク</h3>
+            <p title="クリックして編集" style="border-radius: 3px;">操作は一切不要。図形たちは自律的に漂い、接触によって自動で戦闘を行います。<br data-start="97" data-end="100">
+プレイヤーはその様子を観察しながら、構成の工夫を楽しむ"眺めて考える"ローグライク体験が味わえます。</p>
+          </div>
+          
+          <div class="feature-item fade-in appear">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title" title="クリックして編集" style="border-radius: 3px;">&nbsp;個性豊かな図形たち</h3>
+            <p title="クリックして編集" style="border-radius: 3px;">それぞれ異なる能力や特性を持つ全12種類の図形を実装。<br data-start="365" data-end="368">
+回復、速度、耐久力などの違いによって編成の幅が広がります。</p>
+          </div>
+          
+          <div class="feature-item fade-in appear">
+            <div class="feature-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="feature-title" title="クリックして編集" style="border-radius: 3px;">拡張性と整理性を重視した設計</h3>
+            <p title="クリックして編集" style="border-radius: 3px;">状態管理やデータの流れを意識した設計を採用。<br data-start="475" data-end="478">
+図形の特性やバトルロジックが整理された構造の中で動作するように心がけています。<br data-start="517" data-end="520">
+保守しやすく、拡張にも対応しやすいコード設計を目指しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- スクリーンショットセクション -->
+    <section class="section section-gray">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 class="section-title" title="クリックして編集" style="border-radius: 3px;">スクリーンショット</h2>
+          <p class="section-subtitle" title="クリックして編集" style="border-radius: 3px;">開発中のゲーム画面</p>
+        </div>
+        
+        <div class="screenshot-grid">
+          <div class="screenshot-item fade-in appear">
+            <div class="screenshot-caption" title="クリックして編集" style="border-radius: 3px;">バトル画面</div>
+            <img src="images/dimension-core/Battle.png" alt="バトル画面" class="modal-trigger" title="クリックして画像を変更" style="">
+          </div>
+          <div class="screenshot-item fade-in appear">
+            <div class="screenshot-caption" title="クリックして編集" style="border-radius: 3px;">図形選択</div>
+            <img src="images/dimension-core/SelectShapes.png" alt="キャラクター選択画面" class="modal-trigger" title="クリックして画像を変更" style="">
+          </div>
+          <div class="screenshot-item fade-in appear">
+            <div class="screenshot-caption" title="クリックして編集" style="border-radius: 3px;">アップグレード</div>
+            <img src="images/dimension-core/UpgradeShapes.png" alt="マップ画面" class="modal-trigger" title="クリックして画像を変更" style="">
+          </div>
+          <div class="screenshot-item fade-in appear">
+            <div class="screenshot-caption" title="クリックして編集" style="border-radius: 3px;">ランダムイベント</div>
+            <img src="images/dimension-core/randomEvent.png" alt="スキル発動エフェクト" class="modal-trigger" title="クリックして画像を変更" style="">
+          </div>
+        </div>
+        
+        <p class="text-center" style="margin-top: 2rem; color: var(--text-light); border-radius: 3px;" title="クリックして編集">
+          ※ 開発中のため、デザインや機能は変更される可能性があります
+        </p>
+      </div>
+    </section>
+    
+    <!-- 開発プロセスセクション -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 class="section-title" title="クリックして編集" style="border-radius: 3px;">開発プロセス</h2>
+          <p class="section-subtitle" title="クリックして編集" style="border-radius: 3px;">企画から実装まで</p>
+        </div>
+        
+        <div class="process-timeline">
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年1月26日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-lightbulb"></i> 企画立案</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                好きなゲームを分析し、自分の得意分野と照らし合わせて「ローグライク」の開発を決定。
+                1ヶ月での完成を目標に、コア要素の洗い出しと基本設計（図形・戦闘・成長・UI構成）を行いました。
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年2月10日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-cogs"></i> 基本部分の開発</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                ゲームの土台となる主要システムを実装。
+                図形の移動・衝突による戦闘処理、ステージの進行ロジックなどを完成させました。
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年2月24日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-cogs"></i> システム拡張</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                成長要素や運要素を加えるため、図形のアップグレード機能やランダムイベントの発生処理を追加。
+                戦略と変化に富んだ構成が可能になりました。
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年2月27日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-palette"></i> UI調整・構造改善</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                ユーザーにとって見やすく直感的なUIになるようレイアウトを調整。
+                あわせて、ゲーム内部のデータ構造や状態管理の再整理も行いました。
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年3月5日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-balance-scale"></i> バランス調整</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                テストプレイを繰り返しながら、敵の出現パターンやスキル効果の調整を実施。
+                プレイヤーが「考えて楽しめる」難易度設計を目指しました。
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in appear">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025年3月10日</div>
+            <div class="timeline-content">
+              <h3 title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-flag-checkered"></i> 完成</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                12種類の図形、25のステージ、10種のランダムイベントを実装し、ひと通りの機能とバランスを整えて完成。
+                一貫して一人で開発し、構想から完成まで約1.5ヶ月での仕上げとなりました。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 技術セクション -->
+    <section class="section section-gray">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 class="section-title" title="クリックして編集" style="border-radius: 3px;">使用技術</h2>
+          <p class="section-subtitle" title="クリックして編集" style="border-radius: 3px;">開発に使用した技術とツール</p>
+        </div>
+        
+        <div class="feature-grid">
+          <div class="feature-item fade-in appear">
+            <div class="feature-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="feature-title" title="クリックして編集" style="border-radius: 3px;">開発環境</h3>
+            <p title="クリックして編集" style="border-radius: 3px; text-align: left;">
+              <strong>エンジン:</strong> Unity 2022.3 LTS<br>
+              <strong>言語:</strong> C#<br>
+              <strong>バージョン管理:</strong> Git/GitHub<br>
+              <strong>エディタ:</strong> Visual Studio Code&nbsp;</p>
+          </div>
+          
+          <div class="feature-item fade-in appear">
+            <div class="feature-icon">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <h3 class="feature-title" title="クリックして編集" style="border-radius: 3px;">主要パッケージ</h3>
+            <p title="クリックして編集" style="border-radius: 3px; text-align: left;">
+              <strong>アニメーション:</strong> DOTween<br>
+              <strong>UI構築:</strong> Unity UI System<br>
+              <strong>非同期処理:</strong> UniRX<br>
+              <strong>データ管理:</strong> ScriptableObject
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- モーダル（画像拡大表示用） -->
+  <div class="modal">
+    <div class="modal-content">
+      <span class="modal-close">×</span>
+      <img class="modal-image" src="images/dimension-core/screenshot4.jpg" alt="" title="クリックして画像を変更" style="">
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">Runaki</span>
+          <p title="クリックして編集" style="border-radius: 3px;">設計と演出にこだわるUnityゲームプログラマ</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-nav">
+            <h3 title="クリックして編集" style="border-radius: 3px;">リンク</h3>
+            <a href="index.html#home">ホーム</a>
+            <a href="index.html#about">プロフィール</a>
+            <a href="index.html#skills">スキル</a>
+            <a href="index.html#works">制作実績</a>
+            <a href="index.html#contact">お問い合わせ</a>
+          </div>
+          
+          <div class="footer-contact">
+            <h3 title="クリックして編集" style="border-radius: 3px;">お問い合わせ</h3>
+            <p title="クリックして編集" style="border-radius: 3px;"><i class="fas fa-envelope"></i> beyoburo@gmail.com</p>
+            <p title="クリックして編集" style="border-radius: 3px;"><i class="fab fa-github"></i> GitHubプロフィール</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p title="クリックして編集" style="border-radius: 3px;">© <span id="current-year">2025</span> Runaki ポートフォリオ. All Rights Reserved.</p>
+        <div class="footer-social">
+          <a href="https://github.com/noutetu" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // 現在の年を自動挿入
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // スクリーンショットのモーダル表示
+    document.addEventListener('DOMContentLoaded', () => {
+      const modalTriggers = document.querySelectorAll('.modal-trigger');
+      const modal = document.querySelector('.modal');
+      const modalImage = document.querySelector('.modal-image');
+      const modalClose = document.querySelector('.modal-close');
+      
+      modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const imgSrc = trigger.getAttribute('src');
+          modalImage.setAttribute('src', imgSrc);
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+<button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button><button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button></body></html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runaki - ゲームプログラマーポートフォリオ</title>
+  <meta name="description" content="Runakiのポートフォリオサイト - ゲームプログラミングとUXデザインに情熱を持つプログラマー">
+  
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome アイコン -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    /* スクリーンショット表示用のスタイル（小さめのサイズに設定） */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .screenshot-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      max-width: 100px;
+      margin: 0 auto;
+    }
+    
+    .screenshot-item img {
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot-item:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- ナビゲーションバー -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="#home" class="logo">Runaki</a>
+      <div class="nav-links">
+        <a href="#home" class="nav-link active">ホーム</a>
+        <a href="#about" class="nav-link">プロフィール</a>
+        <a href="#skills" class="nav-link">スキル</a>
+        <a href="#works" class="nav-link">制作実績</a>
+        <a href="#contact" class="nav-link">お問い合わせ</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main>
+    <!-- ヒーローセクション -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title" title="クリックして編集" style="border-radius: 3px;">こんにちは<br><span class="highlight">Runaki</span>です</h1>
+          <p class="hero-subtitle" title="クリックして編集" style="border-radius: 3px;">考えて動くゲームプログラマー</p>
+          <p title="クリックして編集" style="border-radius: 3px;">ゲーム開発に情熱を持ち、自ら手を動かして試すことを大切にしています。<br>ユーザー体験を支える設計とコードの構築に強い関心があります。</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- プロフィールセクション -->
+    <section id="about" class="profile">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 title="クリックして編集" style="border-radius: 3px;">プロフィール</h2>
+          <p title="クリックして編集" style="border-radius: 3px;">私について</p>
+        </div>
+        
+        <div class="profile-content">
+          <div class="profile-info">
+            <h3 title="クリックして編集" style="border-radius: 3px; text-align: center;">はじめまして、Runakiです</h3>
+            <p class="profile-description" title="クリックして編集" style="border-radius: 3px;">私は文系学部に在籍しながら、1年間独学でゲーム開発を学んできました。<br data-start="160" data-end="163">
+UnityとC#を使い、ユーザーにとって楽しく直感的な体験を提供できるゲームづくりに情熱を持って取り組んできました。</p>
+            
+            <div class="info-grid">
+              <div class="info-item">
+                <i class="fas fa-laptop-code"></i>
+                <div>
+                  <h4>開発経験</h4>
+                  <p title="クリックして編集" style="border-radius: 3px;">UnityとC#を独学で1年間学び、2Dローグライクゲームを個人で完成させました。</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <i class="fas fa-user-clock"></i>
+                <div>
+                  <h4>取り組みスタンス</h4>
+                  <p title="クリックして編集" style="border-radius: 3px;">まずはやってみる。とにかく挑戦して、試しながら学ぶことを大切にしています。</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <i class="fas fa-cogs"></i>
+                <div>
+                  <h4>重視していること</h4>
+                  <p title="クリックして編集" style="border-radius: 3px;">プレイヤー体験に直結する設計と、保守性・拡張性を意識したコードを心がけています。</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <i class="fas fa-bullseye"></i>
+                <div>
+                  <h4>今後の目標</h4>
+                  <p title="クリックして編集" style="border-radius: 3px;">技術をさらに磨き、自分の作ったゲームを世の中に届けられる開発者になることを目指しています。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- スキルセクション -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 title="クリックして編集" style="border-radius: 3px;">スキル</h2>
+          <p title="クリックして編集" style="border-radius: 3px;">私が持つ技術スタック</p>
+        </div>
+        
+        <div class="skills-content">
+          <div class="skills-text">
+            <h3 title="クリックして編集" style="border-radius: 3px; text-align: center;">私のスキルセット</h3>
+            <p title="クリックして編集" style="border-radius: 3px; text-align: center;">
+              私は主にUnityとC#を使用したゲーム開発を得意としています。
+              オブジェクト指向プログラミングの基本原則を大切にし、<span style="font-size: 1.1rem;">保守性と拡張性の高いコードを書くことを心がけています。&nbsp;</span></p>
+          </div>
+        </div>
+        
+        <div class="skill-category" style="margin-top: 3rem;">
+          <h3 title="クリックして編集" style="border-radius: 3px; text-align: center;">開発スキル</h3>
+          <div class="skill-list" style="justify-content: center;">
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">Unity</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">C#</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">Git</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">HTML/CSS</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-category" style="margin-top: 3rem;">
+          <h3 title="クリックして編集" style="border-radius: 3px; text-align: center;">ゲーム開発スキル</h3>
+          <div class="skill-list" style="justify-content: center;">
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">DOTween</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">UniRx/UniTask</span>
+            </div>
+            <div class="skill-chip">
+              <span class="skill-name" title="クリックして編集" style="border-radius: 3px;">ScriptableObject</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="future-skills" style="margin-top: 4rem;">
+          <h3 title="クリックして編集" style="border-radius: 3px; text-align: center;">習得予定のスキル</h3>
+          <div class="future-skills-grid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="skill-card" style="text-align: center; max-width: 300px;">
+              <h4>Unreal Engine</h4>
+              <p title="クリックして編集" style="border-radius: 3px;">C++とBlueprintを活用した3Dゲーム開発</p>
+            </div>
+            <div class="skill-card" style="text-align: center; max-width: 300px;">
+              <h4>3Dモデリング</h4>
+              <p title="クリックして編集" style="border-radius: 3px;">BlenderとMayaを使用した3Dモデル制作</p>
+            </div>
+            <div class="skill-card" style="text-align: center; max-width: 300px;">
+              <h4>シェーダー</h4>
+              <p title="クリックして編集" style="border-radius: 3px;">HLSLやShaderGraphを使用した視覚効果の実装</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 制作実績セクション -->
+    <section id="works" class="works">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 title="クリックして編集" style="border-radius: 3px;">制作実績</h2>
+          <p title="クリックして編集" style="border-radius: 3px;">私が制作したプロジェクト</p>
+        </div>
+        
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="game">ゲーム</button>
+        </div>
+        
+        <div class="work-grid">
+          <div class="work-card" data-category="game">
+            <div class="work-image">
+              <img src="images/dimension-core/Title.png" alt="Dimension Core プレビュー画像" title="クリックして画像を変更" style="">
+            </div>
+            <div class="work-info">
+              <span class="work-category" title="クリックして編集" style="border-radius: 3px;">2Dローグライクゲーム</span>
+              <h3 title="クリックして編集" style="border-radius: 3px;">Dimension Core</h3>
+              <p title="クリックして編集" style="border-radius: 3px;">
+                戦略性の高いデッキ構築要素を取り入れた2Dローグライクゲーム。Unity/C#で独自に開発しました。
+              </p>
+              <div class="work-links text-center">
+                <a href="dimension-core.html" class="work-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header fade-in appear">
+          <h2 title="クリックして編集" style="border-radius: 3px;">お問い合わせ</h2>
+          <p title="クリックして編集" style="border-radius: 3px;">お気軽にご連絡ください</p>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <p title="クリックして編集" style="border-radius: 3px;">
+              プロジェクトに関する質問などがありましたら、以下のフォームまたは直接メールでお問い合わせください。
+              通常24時間以内に返信いたします。
+            </p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3 title="クリックして編集" style="border-radius: 3px;">メール</h3>
+                  <a href="mailto:beyoburo@gmail.com">beyoburo@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <div>
+                  <h3 title="クリックして編集" style="border-radius: 3px;">SNS</h3>
+                  <div class="contact-social">
+                    <a href="https://github.com/noutetu" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required="">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required="">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">件名</label>
+              <input type="text" id="subject" name="subject" required="">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">メッセージ</label>
+              <textarea id="message" name="message" rows="5" required=""></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">Runaki</span>
+          <p title="クリックして編集" style="border-radius: 3px;">設計と演出にこだわるUnityゲームプログラマ</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-nav">
+            <h3 title="クリックして編集" style="border-radius: 3px;">リンク</h3>
+            <a href="#home">ホーム</a>
+            <a href="#about">プロフィール</a>
+            <a href="#skills">スキル</a>
+            <a href="#works">制作実績</a>
+            <a href="#contact">お問い合わせ</a>
+          </div>
+          
+          <div class="footer-social">
+            <h3 title="クリックして編集" style="border-radius: 3px;">SNS</h3>
+            <div class="footer-social-icons">
+              <a href="https://github.com/noutetu" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p title="クリックして編集" style="border-radius: 3px;">© <span id="current-year">2025</span> Runaki ポートフォリオ. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- モーダル -->
+  <div class="modal">
+    <div class="modal-content">
+      <span class="modal-close">×</span>
+      <img class="modal-image" src="" alt="" title="クリックして画像を変更" style="">
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // 現在の年を自動挿入
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // モーダル機能
+    document.addEventListener('DOMContentLoaded', () => {
+      const modalTriggers = document.querySelectorAll('.modal-trigger');
+      const modal = document.querySelector('.modal');
+      const modalImage = document.querySelector('.modal-image');
+      const modalClose = document.querySelector('.modal-close');
+      
+      modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const imgSrc = trigger.getAttribute('src');
+          modalImage.setAttribute('src', imgSrc);
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+<button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button><button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button><button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button><button id="edit-mode-toggle" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; padding: 10px 15px; background-color: rgb(244, 67, 54); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">編集モード: ON</button><button id="save-changes" style="position: fixed; right: 20px; bottom: 70px; z-index: 1000; padding: 10px 15px; background-color: rgb(76, 175, 80); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">変更を保存</button><button id="export-html" style="position: fixed; right: 20px; bottom: 120px; z-index: 1000; padding: 10px 15px; background-color: rgb(255, 152, 0); color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px; display: none;">HTMLとして保存</button><button id="edit-help" style="position: fixed; right: 20px; bottom: 170px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: rgb(33, 150, 243); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;">?</button></body></html>
